@@ -1,6 +1,6 @@
 require "test/unit"
 
-require "~/Desktop/Ruby Quiz/MadLibs"
+require "~/Desktop/Ruby Quiz/MadLibs/Madlibs"
 
 class TestMadLibs < Test::Unit::TestCase
   def test_make_hash
@@ -13,7 +13,7 @@ class TestMadLibs < Test::Unit::TestCase
     than ((a gemstone)).")
     fill_hash = {"gem" => "Dog", "a gemstone" => "Cat"}
    assert_equal( "Our favorite language is Dog. We think Dog is better
-    than Cat.", a_mad_lib_hash.finalize)
+    than Cat.", a_mad_lib_hash.finalize(fill_hash))
   end
   def test_prompt_user
     test_string = prompt_user("Dog")

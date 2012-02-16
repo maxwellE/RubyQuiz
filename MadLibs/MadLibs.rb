@@ -17,7 +17,10 @@ class MadLibs
     gets.strip
   end
   def finalize(override_hash=nil)
-    @mad_string.gsub(/\(\(([^)]+)\)\)/)
+    @mad_string.gsub!(/\(\(([^)]+)\)\)/){ |match|
+      puts match
+    }
+    return @mad_string
   end
   def get_hash_of_words
     word_hash = {}
