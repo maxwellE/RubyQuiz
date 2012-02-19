@@ -10,5 +10,5 @@ This repository contains some of my solutions for the RubyQuiz problem set. I ho
 
 Solved Problems
 ----------------
-*Scrambler
-*FizzBuzz
+* Scrambler
+* FizzBuzz
