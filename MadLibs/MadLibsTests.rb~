@@ -1,6 +1,6 @@
 require "test/unit"
 
-require_relative "MadLibs.rb"
+require "~/Desktop/Ruby Quiz/MadLibs/Madlibs"
 
 class TestMadLibs < Test::Unit::TestCase
   def test_make_hash
