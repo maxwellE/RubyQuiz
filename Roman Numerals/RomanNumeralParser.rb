@@ -1,12 +1,32 @@
 #!/usr/bin/env ruby -wKU
 class RomanNumeralParser
-  attr_accessor :roman_numeral
-  def initialize(numeral_string)
-    @roman_numeral = numeral_string
+  def initialize(value)
+    if value.is_a? Integer
+      @integer = value
+    else
+       @roman_numeral = value
+       @roman_integer = {
+         1 => 'I'
+         5 => 'V'
+         10 => 'X'
+         50 = 'L'
+       }
+    end
   end
   def to_arabic
-    numerals = @roman_numeral.split('')
-    numerals.inject(0) { |sum, numeral| sum += int_val(numeral) }
+    if @integer.nil?
+      numerals = @roman_numeral.split('')
+      return numerals.inject(0) { |sum, numeral| sum += int_val(numeral) }
+    else
+      return @integer
+    end
+  end
+  def to_roman
+    if @roman_numeral.nil?
+      
+    else
+      @roman_numeral
+    end
   end
   protected
   def int_val(a_numeral)
