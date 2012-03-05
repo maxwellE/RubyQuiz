@@ -1,16 +1,17 @@
 #!/usr/bin/env ruby -wKU
 class RomanNumeralParser
   def initialize(value)
+        @ROMAN_INTEGER = {
+           1 => 'I',
+           5 => 'V',
+           10 => 'X',
+           50 => 'L'
+         }
     if value.is_a? Integer
       @integer = value
     else
        @roman_numeral = value
-       @roman_integer = {
-         1 => 'I'
-         5 => 'V'
-         10 => 'X'
-         50 = 'L'
-       }
+   
     end
   end
   def to_arabic
@@ -23,7 +24,12 @@ class RomanNumeralParser
   end
   def to_roman
     if @roman_numeral.nil?
-      
+      target = @integer
+      @roman_numeral = ""
+      @ROMAN_INTEGER.keys.sort { |a, b| b <=> a }.inject("") do |roman, div|
+        times, target = target.divmod(div)
+        @roman_numeral << @ROMAN_INTEGER[div] * times
+      end
     else
       @roman_numeral
     end
@@ -34,6 +40,7 @@ class RomanNumeralParser
       when "V" then 5
       when "I" then 1
       when "X" then 10
+      when "L" then 50
     end
   end
 end
