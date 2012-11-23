@@ -1,4 +1,3 @@
-require 'pry'
 # Facebook Interview Question
 # Given several meeting times in the format of an array of arrays each with a 
 # start and ending time tell me if it is possible for me to not miss a single
