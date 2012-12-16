@@ -6,9 +6,9 @@ class LootTest < Test::Unit::TestCase
     @loot_good = Loot.new([2, 9, 12, 14, 17, 23, 32, 34, 40, 42, 49])
   end
   def test_should_not_work_for_bad_loot
-    assert_equal(@loot_bad.evaluate,nil)
+    assert_equal(nil,@loot_bad.evaluate)
   end
   def test_should_work
-     @loot_good.find_solution
+     assert_equal([[9, 12, 32, 34, 49],[14, 17, 23, 40, 42]],@loot_good.evaluate)
   end
 end
